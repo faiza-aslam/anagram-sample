@@ -35,7 +35,7 @@ public class AnagramTest {
     @Test
     public void testGetAnagramList2() {
         // Setup
-        final List<String> inputList = new ArrayList<String>(); //Arrays.asList("eat", "tea", "tan", "ate", "nat", "bat");
+        final List<String> inputList = new ArrayList<>();
         final List<List<String>> expectedResult = Collections.emptyList();
 
         // Run the test
@@ -63,6 +63,19 @@ public class AnagramTest {
         // Setup
         final List<String> inputList = Collections.singletonList("eat");
         final List<List<String>> expectedResult = Collections.singletonList(Collections.singletonList("eat"));
+
+        // Run the test
+        final List<List<String>> result = anagramUnderTest.getAnagrams(inputList);
+
+        // Verify the results
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void testGetAnagramList5() {
+        // Setup
+        final List<String> inputList = Arrays.asList("eat", "bat", "meat");
+        final List<List<String>> expectedResult = Arrays.asList(Collections.singletonList("eat"), Collections.singletonList("bat"), Collections.singletonList("meat"));
 
         // Run the test
         final List<List<String>> result = anagramUnderTest.getAnagrams(inputList);

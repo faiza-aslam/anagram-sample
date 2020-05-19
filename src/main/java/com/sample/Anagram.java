@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class Anagram {
 
@@ -36,7 +37,7 @@ public class Anagram {
         return resultList;
     }
 
-    private boolean areAnagram(String str1, String str2) {
+    private boolean areAnagramV1(String str1, String str2) {
         /* For this method Big O notation would be: O(n log n) because of sorting */
 
         if (str1.length() != str2.length())
@@ -65,5 +66,15 @@ public class Anagram {
         }
 
         return map1.equals(map2);
+    }
+
+    private boolean areAnagramV3(String str1, String str2) {
+
+        /* For this method Big O notation would be: O(n+n) because of codepoints*/
+
+        if (str1.length() != str2.length())
+            return false;
+
+        return Objects.equals(str1.codePoints().sum(), str2.codePoints().sum());
     }
 }
