@@ -22,15 +22,10 @@ public class Anagram {
             List<String> anagramList = new ArrayList<>();
             anagramList.add(inputList.get(i));
             for (int j = i + 1; j < inputList.size(); j++) {
-                //System.out.println(inputList.get(i) + ", " + inputList.get(j));
                 boolean anagram = areAnagramV2(inputList.get(i), inputList.get(j));
-                //System.out.println("anagram: " + anagram);
                 if (anagram) {
                     anagramList.add(inputList.get(j));
                     inputList.remove(j);
-                    /*System.out.println("anagramList: " + anagramList);
-                    System.out.println("inputList: " + inputList);
-                    System.out.println("resultList: " + resultList);*/
                     j--;
                 }
             }
