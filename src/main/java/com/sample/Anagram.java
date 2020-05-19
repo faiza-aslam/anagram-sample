@@ -11,6 +11,8 @@ public class Anagram {
 
     public List<List<String>> getAnagrams(final List<String> list) {
 
+        /* For this method Big O notation would be: O(n^2) because of nested loops */
+
         if (list == null || list.isEmpty())
             return Collections.emptyList();
 
@@ -35,6 +37,8 @@ public class Anagram {
     }
 
     private boolean areAnagram(String str1, String str2) {
+        /* For this method Big O notation would be: O(n log n) because of sorting */
+
         if (str1.length() != str2.length())
             return false;
 
@@ -46,6 +50,8 @@ public class Anagram {
     }
 
     private boolean areAnagramV2(String str1, String str2) {
+
+        /* For this method Big O notation would be: O(n) because of 1 loop */
 
         if (str1.length() != str2.length())
             return false;
